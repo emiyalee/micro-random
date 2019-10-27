@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-random
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: random
+    spec:
+      containers:
+      - name: random
+        image: 172.16.3.221/lihualin/random-service:0.1
+        command: ["random-service", "--registry", "noop", "--server_address", "0.0.0.0:8080"]
