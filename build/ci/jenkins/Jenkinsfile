@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'go env'
                 sh 'go mod tidy'
+                sh 'pwd'
             }
         }
         stage('Test') {
