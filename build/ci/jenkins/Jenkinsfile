@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        docker {
+            image 'golang:1.13'
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo $WORKSPACE'
+                sh 'ls -al '
+                sh 'go env'
+            }
+        }
+    }
+}
