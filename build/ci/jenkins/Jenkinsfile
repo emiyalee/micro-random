@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'golang:1.13'
+            args '-e GOPROXY=https://goproxy.cn'
         }
     }
     stages {
@@ -11,6 +12,9 @@ pipeline {
                 sh 'ls -al '
                 sh 'go env'
             }
+        }
+        stage('Test') {
+
         }
     }
 }
