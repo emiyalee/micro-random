@@ -11,6 +11,8 @@ pipeline {
                 sh 'go env'
                 sh 'go mod tidy'
                 sh 'pwd'
+                sh 'cd cmd/random-service'
+                docker.build('random-service')
             }
         }
         stage('Test') {
