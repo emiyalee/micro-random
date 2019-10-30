@@ -12,9 +12,7 @@ pipeline {
                 sh 'go mod tidy'
                 sh 'pwd'
                 sh 'cd cmd/random-service'
-                script {
-                    docker.build('random-service')
-                }
+                sh 'go mod verify'
                 
             }
         }
