@@ -13,8 +13,5 @@ pipeline {
                 sh 'go env'
             }
         }
-        stage('Test') {
-
-        }
     }
 }
